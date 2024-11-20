@@ -1,0 +1,88 @@
+<!DOCTYPE html#申明网页解析遵循的规则
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--保证良好显示-->
+		<meta http-equiv="Content-Type"content="text/html"/>
+		<meta name="description" content="test"/>
+		<meta name="keywords" content="HTML,CSS"/>
+		<title>Welcome</title>
+		<link rel="stylesheet" type="text/css" href="css.css">
+	</head>
+	<body>
+		<div style="text-align: center;">
+			<img src="C:\Users\oc26\Desktop\同济.jpg" alt="同济大学校徽" width="100" height="100">
+		</div>
+		<header>欢迎</header>
+		<h1>My name is 许！</h1>
+		<div class="divcss"><strong><em>大家好</em></strong></div>
+		</div>
+		<section>
+			<h2>This Web</h2>
+			To be <abbr title="or frank">honest</abbr>,
+			<p>This is just a little test</p>
+		</section>
+		<nav>
+			<a href="https://www.desmos.com/calculator?lang=zh-CN">Desmos</a>|
+			<a href="https://www.geogebra.org/calculator">Geogebra</a>
+		</nav>
+		<a href="javascript:alert('Hello World!');">请点我</a><br>
+		<a href="https://cn.bing.com">点击这里进入搜索</a>
+		<p>"Hello World!"</p>
+		<form action="https://cn.bing.com" method=POST>
+			<fieldset>
+				<legend>个人信息</legend>
+				<label for="text">用户名:</label>
+				<input type="text" list="username" required>
+				<datalist id="username">
+					<option value="azls"></option>
+				</datalist>
+				<label for="password">密码：</label>
+				<input type="password" id="password" required autocomplete="on">
+				<input type=submit name=password><input type=reset value=重写>
+			</fieldset>
+			<input type=checkbox name=sub1/>语文<input type=checkbox name=sub2 checked/>数学
+			<input type=radio name=sub checked>66<p>
+			<select name=niubi size=1>
+				<optgroup label="😀" disabled>
+					<option>haha</option>
+					<option>haihai</option>
+				</optgroup>
+			<option>haohao</option>
+			</select>
+		</form>
+		<form action="MAILTO:oc26@msn.com" method="post">
+			<textarea name=remark rows=5 cols=60 required></textarea>
+			<button type="submit">发出这封邮件</button>
+		</form>
+		<ul class="list"><!--无序列表-->
+			<li>111</li>
+			<li>222</li>
+		</ul>
+		<ol>
+			<li>11</li>
+			<li>22</li>
+		</ol>
+		<table width=170 height=100 cellspacing=10 cellpadding=10>
+			<tr>
+				<th>name</th>
+				<th>age</th>
+			</tr>
+			<tr>
+				<th>three</th>
+				<th>18</th>
+			</tr>
+		</table>
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+		0<input type="range" id="a" value="50">100
+		+<input type="number" id="b" value="50">
+		=<output name="x" for="a b"></output>
+	</form>
+	<footer>
+		<p>thanks for your viewing</p>
+		<p><time pubdate datetime="2024-9-1"></time></p>
+	</footer>
+	</body>
+</html>

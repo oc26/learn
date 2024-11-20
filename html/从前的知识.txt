@@ -1,0 +1,66 @@
+标红的指明html5不支持?
+DOCTYPE实操
+    <!DOCTYPE html#申明网页解析遵循的规则
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict/Transitional/Frameset//EN/CH"#编译方式：严格，过渡，基于框架//编译语言
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict/transitional/frameset.dtd">
+head,body实操
+    <html lang="en/zh...">#定义语言，影响不大
+    <head>
+    <title>...</title>
+    <meta http-equiv="Content-Type"content="text/html;charset=utf-8#若与文件保存时编码不一致，加了会导致中文乱码"/>#定义该文件的描述等，不是或！
+    <meta name="description" content="#自己决定"/>
+    <meta name="keywords" content="HTML,CSS"/>
+    <link href="#被链接文档的位置" rel="stylesheet#定义当前文档与被链接文档的关系" type="text/css#引入css#被链接文档的MIME类型"......>
+    </head>
+    <body>
+    ......
+    </body>
+    </html>
+标签：<br>回车<p>创建一个段落&nbsp产生一个空格<h1~h2...>标题文字标签<font size = 3 color= "red">
+          文字格式控制标签<b>粗体<em><i>斜体<u>下划线<hr>水平线<img src="路径" alt="为图像提供替代文本" width="" height="">图片<(body) background="image-URL">背景图片
+          <body left/rightmargin=2 topmargin=5>页面空白<hr size=3 width=25 color=red>标尺线
+          <table>表格，其中<tr>表行<th>表头<td>表元<tr/th/td align=left/center/right>表格内文字布局
+          <th bgcolor=...>单元格背景色彩<th background="url">单元格背景图像<table bordercolor=...>表格边框色彩
+          <table bordercolorlight/dark=...>表格边框色彩亮度<embed type="image/html/video" src="#被嵌入内容的url" width="" height="" autostart=true/false loop=2/true hidden=no volume="100">
+          <a href="#url">#形式</a>#超链接
+表单实操
+    <form action="url"(user.asp) method=GET/POST>#提交到哪里;获取信息传到表单，填写内容传送给别的页面
+    (文本)<input type=submit... name#赋名，便于别的网站识别=text/password/textarea/radio/image/hidden/submit/reset><input type=reset... value#文本框显示默认值=...>
+    <input type=checkbox name=sub1/>语文<input type=checkbox name=sub2 checked/>数学
+    <input type=radio#单选框 name=sub checked>66<p>
+    <select name=niubi (size=10)>#列表框
+    <option>haha</option>
+    </select>
+    <textarea name=ha rows=5 cols=60></textarea><p>#文本区域，行数，列宽
+    </form>
+table实操
+    <table border=1 width=170 height=100 cellspacing=10 cellpadding=10>#单元格间隙，单元格内部空白部分
+    <tr><th>titleA</th><th>titleB</th>
+    </tr>
+    <tr><td>A</td><td>B</td>
+    </tr>
+    </table>
+margin:10px 20px 30px 40px;参数顺序与四个方向对应lurd。前三个是l,ud,r。前两个是lr,ud。前一个是lrud
+margin-top/right/bottom/left: 10px;
+margin:auto;自动居中
+border:solid 1px #333;样式粗细，颜色 red之类也可以
+padding同margin
+水平：（外边距+）边框+内边距+内容+...——盒子本身
+块状元素：div,p,h1~h6，都独占一行
+内联元素：input,span,a,不占行，不能设宽和高
+并排布局（上下两排），浮动布局float:left/right/none;在普通元素之上,适用div,span等
+clear:left;清除普通元素之上的浮动元素，使在其之上
+实例
+      <div class="divcss5">
+      <div class="divcss5_left"></div>
+      <div class="divcss5_right"></div>
+      <div class="clear"></div>
+      </div>	#html
+      .divcss5{ width:400px;padding:10px;border:1px solid #F00}
+      .divcss5_left{ float:left;width:150px;padding:10px;border:1px solid #00F}
+      .divcss5_right{ float:right;width:150px;padding:10px;border:1px solid #00F}
+      .clear{ clear:both}	#css
+font-family字体设置 autocomplete自动填充 fieldset为表单元素绘制边框，与legend并用
+strong加粗文本 em斜体强调 ecvtype用于action且post时，发送时的编码方式，有三种，application/x-www-form-urlencoded
+默认（全部编码），multipart/form-data文件上传时，text/plain空格转为+
+!!!mathjax导入数学公式   caption表格题目
