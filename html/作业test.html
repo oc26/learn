@@ -3,19 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>主页</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta http-equiv="Content-Type"content="text/html"/>
+	<meta name="description" content="test"/>
+	<meta name="keywords" content="HTML,CSS"/>
+    <title>电影选票网站</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></head>
+    <style>
+        body {
+                background-image: url('station.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                margin-top: 60px;
+        }
+        .movie-list {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+        }
+        .movie {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 15px;
+            box-shadow: 2px 2px 12px #aaa;
+            border: 1px solid #ccc;
+                margin: 20px;
+                width: 200px;
+        }
+        .movie img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .movie h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .movie p {
+            font-size: 1em;
+            margin-bottom: 10px;
+            flex-grow: 1;
+        }
+        .movie button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .movie button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
+    <!-- 顶栏导航 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">电影选票网站</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="主页.html">首页</a>
+                    <a class="nav-link" href="#">首页 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">分类</a>
@@ -27,9 +78,17 @@
                     <a class="nav-link" href="#">即将上映</a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" id="authLinks">
+                <li class="nav-item" id="loginNav">
+                    <a class="nav-link" href="登录.html">登录</a>
+                </li>
+                <li class="nav-item" id="registerNav">
+                    <a class="nav-link" href="注册.html">注册</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav d-none" id="userLinks">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="welcomeUser">欢迎</a>
+                    <a class="nav-link" href="#" id="personalCenter">个人中心</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="logout">登出</a>
@@ -37,31 +96,102 @@
             </ul>
         </div>
     </nav>
-
-    <div class="container mt-5 pt-4">
-        <h1>欢迎来到电影选票网站</h1>
-        <!-- 你的内容 -->
+    <div class="movie-list">
+    <div class="movie">
+        <img src="肖申克的救赎.png" alt="肖申克的救赎">
+        <h2>肖申克的救赎</h2>
+        <p>希望让人自由。</p>
+        <button>购票</button>
     </div>
-
+    <div class="movie">
+        <img src="霸王别姬.png" alt="霸王别姬">
+        <h2>霸王别姬</h2>
+        <p>风华绝代。</p>
+        <button>购票</button>
+    </div>
+    <div class="movie">
+        <img src="阿甘正传.png" alt="阿甘正传">
+        <h2>阿甘正传</h2>
+        <p>一部美国近现代史。</p>
+        <button>购票</button>
+    </div>
+    <div class="movie">
+        <img src="泰坦尼克号.png" alt="泰坦尼克号">
+        <h2>泰坦尼克号</h2>
+        <p>失去的才是永恒的。</p>
+        <button>购票</button>
+    </div>
+    <div class="movie">
+        <img src="千与千寻.png" alt="千与千寻">
+        <h2>千与千寻</h2>
+        <p>最好的宫崎骏，最好的久石让。</p>
+        <button>购票</button>
+    </div>
+    <div class="movie">
+        <img src="美丽人生.png" alt="美丽人生">
+        <h2>美丽人生</h2>
+        <p>最美的谎言。</p>
+        <button>购票</button>
+    </div>
+    <div class="movie">
+        <img src="这个杀手不太冷.png" alt="这个杀手不太冷">
+        <h2>这个杀手不太冷</h2>
+        <p>怪蜀黍和小萝莉不得不说的故事。</p>
+        <button>购票</button>
+    </div>
+    <div class="movie">
+        <img src="星际穿越.png" alt="星际穿越">
+        <h2>星际穿越</h2>
+        <p>爱是一种力量，让我们超越时空感知它的存在。</p>
+        <button>购票</button>
+    </div>
+    <div class="movie">
+        <img src="盗梦空间.png" alt="盗梦空间">
+        <h2>盗梦空间</h2>
+        <p>诺兰给了我们一场无法盗取的梦。</p>
+        <button>购票</button>
+    </div>
+    <div class="movie">
+        <img src="楚门的世界.png" alt="楚门的世界">
+        <h2>楚门的世界</h2>
+        <p>如果再也不能见到你，祝你早安，午安，晚安。</p>
+        <button>购票</button>
+    </div>
+</div>
     <script>
-        // 显示欢迎信息
-        window.onload = function() {
+        // 更新导航栏以反映登录状态
+        function updateNavbar() {
             const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+            const authLinks = document.getElementById('authLinks');
+            const userLinks = document.getElementById('userLinks');
+            const personalCenter = document.getElementById('personalCenter');
+
             if (loggedInUser) {
-                document.getElementById('welcomeUser').textContent = `欢迎, ${loggedInUser.username}`;
+                authLinks.classList.add('d-none');
+                userLinks.classList.remove('d-none');
+                personalCenter.textContent = `个人中心 (${loggedInUser.username})`;
+                personalCenter.href = '个人中心.html'; // 你可以创建一个个人中心页面
             } else {
-                window.location.href = '登录.html';
+                authLinks.classList.remove('d-none');
+                userLinks.classList.add('d-none');
             }
-        };
+        }
 
         // 登出功能
-        document.getElementById('logout').addEventListener('click', function() {
+        document.getElementById('logout').addEventListener('click', function(e) {
+            e.preventDefault();
             localStorage.removeItem('loggedInUser');
             alert('已登出');
+            updateNavbar();
             window.location.href = '登录.html';
         });
+
+        // 初始化导航栏在页面加载时
+        window.onload = updateNavbar;
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
