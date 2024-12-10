@@ -8,6 +8,7 @@
 		<meta name="keywords" content="HTML,CSS"/>
         <link rel="stylesheet" type="text/css" href="css.css">
         <title>作业</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></head>
         <style>
             body {
                 background-image: url('station.png');
@@ -52,71 +53,105 @@
             .movie button:hover {
                 background-color: #0056b3;
             }
+           
         </style>
     </head>
     <body>
-        <h1>电影选票网站</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">电影选票网站</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">首页 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">分类</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">最新上映</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">即将上映</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="登录.html">登录</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="注册.html">注册</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div class="movie-list">
             <div class="movie">
                 <img src="肖申克的救赎.png" alt="肖申克的救赎">
                 <h2>肖申克的救赎</h2>
-                <p>描述 1</p>
+                <p>希望让人自由。</p>
                 <button>购票</button>
             </div>
             <div class="movie">
                 <img src="霸王别姬.png" alt="霸王别姬">
                 <h2>霸王别姬</h2>
-                <p>描述 2</p>
+                <p>风华绝代。</p>
                 <button>购票</button>
             </div>
             <div class="movie">
                 <img src="阿甘正传.png" alt="阿甘正传">
                 <h2>阿甘正传</h2>
-                <p>描述 3</p>
+                <p>一部美国近现代史。</p>
                 <button>购票</button>
             </div>
             <div class="movie">
                 <img src="泰坦尼克号.png" alt="泰坦尼克号">
                 <h2>泰坦尼克号</h2>
-                <p>描述 4</p>
+                <p>失去的才是永恒的。</p>
                 <button>购票</button>
             </div>
             <div class="movie">
                 <img src="千与千寻.png" alt="千与千寻">
                 <h2>千与千寻</h2>
-                <p>描述 5</p>
+                <p>最好的宫崎骏，最好的久石让。</p>
                 <button>购票</button>
             </div>
             <div class="movie">
                 <img src="美丽人生.png" alt="美丽人生">
                 <h2>美丽人生</h2>
-                <p>描述 6</p>
+                <p>最美的谎言。</p>
                 <button>购票</button>
             </div>
             <div class="movie">
                 <img src="这个杀手不太冷.png" alt="这个杀手不太冷">
                 <h2>这个杀手不太冷</h2>
-                <p>描述 7</p>
+                <p>怪蜀黍和小萝莉不得不说的故事。</p>
                 <button>购票</button>
             </div>
             <div class="movie">
                 <img src="星际穿越.png" alt="星际穿越">
                 <h2>星际穿越</h2>
-                <p>描述 8</p>
+                <p>爱是一种力量，让我们超越时空感知它的存在。</p>
                 <button>购票</button>
             </div>
             <div class="movie">
                 <img src="盗梦空间.png" alt="盗梦空间">
                 <h2>盗梦空间</h2>
-                <p>描述 9</p>
+                <p>诺兰给了我们一场无法盗取的梦。</p>
                 <button>购票</button>
             </div>
             <div class="movie">
                 <img src="楚门的世界.png" alt="楚门的世界">
                 <h2>楚门的世界</h2>
-                <p>描述 10</p>
+                <p>如果再也不能见到你，祝你早安，午安，晚安。</p>
                 <button>购票</button>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     </body>
 </html>
