@@ -60,7 +60,7 @@
     <!-- 顶栏导航 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">电影选票网站</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -68,8 +68,19 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">首页 <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">分类</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        分类
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+                        <a class="dropdown-item" href="#">动作</a>
+                        <a class="dropdown-item" href="#">喜剧</a>
+                        <a class="dropdown-item" href="#">爱情</a>
+                        <a class="dropdown-item" href="#">科幻</a>
+                        <a class="dropdown-item" href="#">恐怖</a>
+                        <a class="dropdown-item" href="#">剧情</a>
+                        <!-- 你可以根据需要添加更多类别 -->
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">最新上映</a>
@@ -101,64 +112,81 @@
         <img src="肖申克的救赎.png" alt="肖申克的救赎">
         <h2>肖申克的救赎</h2>
         <p>希望让人自由。</p>
-        <button>购票</button>
+        <button class="btn btn-primary purchase-btn" data-movie-id="1" data-movie-name="肖申克的救赎">购票</button>
     </div>
     <div class="movie">
         <img src="霸王别姬.png" alt="霸王别姬">
         <h2>霸王别姬</h2>
         <p>风华绝代。</p>
-        <button>购票</button>
+        <button class="btn btn-primary purchase-btn" data-movie-id="2" data-movie-name="霸王别姬">购票</button>
     </div>
     <div class="movie">
         <img src="阿甘正传.png" alt="阿甘正传">
         <h2>阿甘正传</h2>
         <p>一部美国近现代史。</p>
-        <button>购票</button>
+        <button class="btn btn-primary purchase-btn" data-movie-id="3" data-movie-name="阿甘正传">购票</button>
     </div>
     <div class="movie">
         <img src="泰坦尼克号.png" alt="泰坦尼克号">
         <h2>泰坦尼克号</h2>
         <p>失去的才是永恒的。</p>
-        <button>购票</button>
+        <button class="btn btn-primary purchase-btn" data-movie-id="4" data-movie-name="泰坦尼克号">购票</button>
     </div>
     <div class="movie">
         <img src="千与千寻.png" alt="千与千寻">
         <h2>千与千寻</h2>
         <p>最好的宫崎骏，最好的久石让。</p>
-        <button>购票</button>
+        <button class="btn btn-primary purchase-btn" data-movie-id="5" data-movie-name="千与千寻">购票</button>
     </div>
     <div class="movie">
         <img src="美丽人生.png" alt="美丽人生">
         <h2>美丽人生</h2>
         <p>最美的谎言。</p>
-        <button>购票</button>
+        <button class="btn btn-primary purchase-btn" data-movie-id="6" data-movie-name="美丽人生">购票</button>
     </div>
     <div class="movie">
         <img src="这个杀手不太冷.png" alt="这个杀手不太冷">
         <h2>这个杀手不太冷</h2>
         <p>怪蜀黍和小萝莉不得不说的故事。</p>
-        <button>购票</button>
+        <button class="btn btn-primary purchase-btn" data-movie-id="7" data-movie-name="这个杀手不太冷">购票</button>
     </div>
     <div class="movie">
         <img src="星际穿越.png" alt="星际穿越">
         <h2>星际穿越</h2>
         <p>爱是一种力量，让我们超越时空感知它的存在。</p>
-        <button>购票</button>
+        <button class="btn btn-primary purchase-btn" data-movie-id="8" data-movie-name="星际穿越">购票</button>
     </div>
     <div class="movie">
         <img src="盗梦空间.png" alt="盗梦空间">
         <h2>盗梦空间</h2>
         <p>诺兰给了我们一场无法盗取的梦。</p>
-        <button>购票</button>
+        <button class="btn btn-primary purchase-btn" data-movie-id="9" data-movie-name="盗梦空间">购票</button>
     </div>
     <div class="movie">
         <img src="楚门的世界.png" alt="楚门的世界">
         <h2>楚门的世界</h2>
         <p>如果再也不能见到你，祝你早安，午安，晚安。</p>
-        <button>购票</button>
+        <button class="btn btn-primary purchase-btn" data-movie-id="10" data-movie-name="楚门的世界">购票</button>
     </div>
 </div>
     <script>
+        // 处理购票按钮点击
+    document.querySelectorAll('.purchase-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+            const movieId = this.getAttribute('data-movie-id');
+            const movieName = this.getAttribute('data-movie-name'); // 假设您添加了 movie 名称的 data 属性
+
+            if (loggedInUser) {
+                // 如果已登录，跳转到购票页面并传递电影ID
+                window.location.href = `购票.html?movieId=${movieId}&movieName=${encodeURIComponent(movieName)}`;
+            } else {
+                // 如果未登录，提示并跳转到登录页面
+                alert('请先登录');
+                window.location.href = '登录.html';
+            }
+        });
+    });
         // 更新导航栏以反映登录状态
         function updateNavbar() {
             const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -190,8 +218,8 @@
         window.onload = updateNavbar;
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
