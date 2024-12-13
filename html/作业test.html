@@ -79,7 +79,6 @@
                         <a class="dropdown-item" href="#">科幻</a>
                         <a class="dropdown-item" href="#">恐怖</a>
                         <a class="dropdown-item" href="#">剧情</a>
-                        <!-- 你可以根据需要添加更多类别 -->
                     </div>
                 </li>
                 <li class="nav-item">
@@ -175,8 +174,7 @@
         button.addEventListener('click', function() {
             const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
             const movieId = this.getAttribute('data-movie-id');
-            const movieName = this.getAttribute('data-movie-name'); // 假设您添加了 movie 名称的 data 属性
-
+            const movieName = this.getAttribute('data-movie-name');
             if (loggedInUser) {
                 // 如果已登录，跳转到购票页面并传递电影ID
                 window.location.href = `购票.html?movieId=${movieId}&movieName=${encodeURIComponent(movieName)}`;
@@ -198,7 +196,7 @@
                 authLinks.classList.add('d-none');
                 userLinks.classList.remove('d-none');
                 personalCenter.textContent = `个人中心 (${loggedInUser.username})`;
-                personalCenter.href = '个人中心.html'; // 你可以创建一个个人中心页面
+                personalCenter.href = '个人中心.html'; 
             } else {
                 authLinks.classList.remove('d-none');
                 userLinks.classList.add('d-none');
